@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Namora cmg</title>
 </head>
@@ -11,9 +10,88 @@
 <body>
     <div id="conteudo">
         <h2>Aceita Namorar Comigo ?</h2>
-        <button onclick="sim()">sim</button>
-        <button onmouseover="desvia(this)">Não</button>
+        <img width="100px" height="100px" src="img/Foto Perfil.jpg" alt="">
+        <button class="sim" onclick="sim()">sim</button>
+        <button class="nao" onclick="desvia(this)" onmouseover="desvia(this)" >Não</button>
     </div>
 </body>
+
+<style>
+
+    body{
+        font-family: sans-serif;
+    }
+
+    #conteudo{
+    background: rgb(218, 112, 195);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: rgb(129, 10, 10);
+    font-size: 1.8em;
+    text-transform: uppercase;
+    }
+
+    img{
+    
+    float: left;
+
+    }
+    .nao{
+    background: red;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    width: 70px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 40px;
+    }
+
+    .sim{
+    background: red;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    }
+
+    .sim:hover{
+    transform: scale(1.2) ;
+    transition: 0.2s;
+    cursor: pointer;
+    }
+</style>
+
+<script>
+    function sim(){
+    alert("Você Aceitou Namorar Comigo!!, TE AMO VIDA :)")
+}
+
+function desvia(t){
+    var btn = t;
+    btn.style.position = 'absolute';
+    btn.style.bottom = geraPosicao(10, 90);
+    btn.style.left = geraPosicao(10, 90);
+    console.log("Opa, Desviei")
+}
+
+randomNumber(0, 100);
+
+function geraPosicao(min, max) {
+  return (Math.random() * (max - min) + min) + "%";
+}
+
+
+</script>
 
 </html>
